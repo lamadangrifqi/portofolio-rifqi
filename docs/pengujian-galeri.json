@@ -1,0 +1,84 @@
+[
+  {
+    "name": "Empty gallery is honest and does not load WebGL",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "All 12 photos load beyond original 9-image limit",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Automatic drift moves gallery",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Pause stops automatic drift",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Gallery wheel pans without moving page",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Mouse drag pans gallery",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Page wheel resumes after drag",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Keyboard panning works",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Grid exposes every photo accessibly",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Photo opens with caption and inert background",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Escape closes photo and restores focus",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Mobile disables automatic motion and fits viewport",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Touch drag pans gallery",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Reduced motion uses static accessible grid",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "No WebGL gracefully falls back to photo grid",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "No runtime errors in gallery interactions",
+    "pass": true,
+    "details": {
+      "errors": []
+    }
+  }
+]

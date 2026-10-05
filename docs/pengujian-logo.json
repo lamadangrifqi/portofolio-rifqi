@@ -1,0 +1,69 @@
+[
+  {
+    "name": "Brand section directly follows hero without fake logos",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Logo marquee animates",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Only original linked brands are accessible",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Logo URLs and image descriptions match manifest",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Hover pauses marquee",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Leaving hover resumes autoplay",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Manual pause survives pointer leaving",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Keyboard focus pauses and duplicates stay out of tab order",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Offscreen logo motion pauses",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Mobile logo section fits viewport",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Reduced motion displays all original logos statically",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Missing logo falls back to actual brand name",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "No brand runtime errors",
+    "pass": true,
+    "details": {
+      "errors": []
+    }
+  }
+]

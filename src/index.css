@@ -1,0 +1,855 @@
+@import "tailwindcss";
+
+:root,
+[data-font="urbanist"] {
+  --font-display:
+    "Urbanist Variable", system-ui, -apple-system, BlinkMacSystemFont,
+    sans-serif;
+  --font-body:
+    "Manrope Variable", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: #030303;
+  color: #f4f4f5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  letter-spacing: -0.025em;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.font-body,
+.font-sans,
+button,
+input,
+select,
+textarea {
+  font-family: var(--font-body);
+}
+
+.font-helvetica-neue {
+  font-family: var(--font-body);
+}
+
+@keyframes kenBurns {
+  from {
+    transform: scale(1.05);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.ken-burns-intro {
+  animation: kenBurns 2.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes heroRise {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.hero-rise {
+  opacity: 0;
+  animation: heroRise 0.95s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes navDrop {
+  from {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-drop {
+  opacity: 0;
+  animation: navDrop 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.1s;
+}
+
+@keyframes drawArc {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.arc-line {
+  stroke-dasharray: var(--len);
+  stroke-dashoffset: var(--len);
+  animation: drawArc 1.6s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.25);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.arc-dot {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: popIn 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(1);
+    opacity: 0.35;
+  }
+  50% {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.35;
+  }
+}
+
+.arc-ring {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pulseRing 2.8s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.arc-text {
+  opacity: 0;
+  animation: fadeIn 0.7s ease-out forwards;
+}
+
+/* Cyberpunk Animations & Effects */
+@keyframes cyberScanline {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+
+@keyframes laserSweep {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateX(250%) skewX(-20deg);
+    opacity: 0;
+  }
+}
+
+@keyframes reticleRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes reticleRotateCounter {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes cyberGlitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 1px);
+  }
+  40% {
+    transform: translate(2px, -1px);
+  }
+  60% {
+    transform: translate(-1px, -1px);
+  }
+  80% {
+    transform: translate(1px, 1px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.cyber-scanlines {
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 3px,
+    rgba(255, 255, 255, 0.02) 3px,
+    rgba(255, 255, 255, 0.02) 6px
+  );
+}
+
+.cyber-laser-sweep {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0.08),
+    transparent
+  );
+  pointer-events: none;
+}
+
+.group:hover .cyber-laser-sweep-trigger {
+  animation: laserSweep 1.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+.group:hover .cyber-reticle-spin {
+  animation: reticleRotate 6s linear infinite;
+}
+
+.group:hover .cyber-reticle-spin-rev {
+  animation: reticleRotateCounter 8s linear infinite;
+}
+
+.group:hover .cyber-glitch-text {
+  animation: cyberGlitch 0.3s ease-in-out infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-rise,
+  .nav-drop,
+  .arc-line,
+  .arc-dot,
+  .arc-ring,
+  .arc-text,
+  .ken-burns-intro,
+  .cyber-laser-sweep-trigger,
+  .cyber-reticle-spin,
+  .cyber-reticle-spin-rev,
+  .cyber-glitch-text {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* =========================================================
+   LIGHT MODE & THEME ADAPTATION
+   ========================================================= */
+html {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+html.light {
+  color-scheme: light;
+}
+
+html.light body {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+html.light #app-root {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* Header in light mode */
+html.light #main-nav-header {
+  background-color: rgba(255, 255, 255, 0.82) !important;
+  border-color: rgba(226, 232, 240, 0.9) !important;
+  box-shadow:
+    0 10px 25px -5px rgba(0, 0, 0, 0.05),
+    0 8px 10px -6px rgba(0, 0, 0, 0.02) !important;
+}
+
+html.light #desktop-nav ul {
+  background-color: rgba(241, 245, 249, 0.9) !important;
+  border-color: rgba(226, 232, 240, 1) !important;
+}
+
+html.light #desktop-nav button {
+  color: #475569 !important;
+}
+
+html.light #desktop-nav button:hover {
+  color: #0f172a !important;
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+html.light #nav-hire-btn {
+  background-color: #0f172a !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15) !important;
+}
+
+html.light #nav-hire-btn:hover {
+  background-color: #1e293b !important;
+}
+
+html.light #mobile-nav-drawer {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  border-color: rgba(226, 232, 240, 1) !important;
+  color: #0f172a !important;
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.12) !important;
+}
+
+html.light #mobile-nav-drawer span,
+html.light #mobile-nav-drawer button {
+  color: #334155;
+}
+
+html.light #mobile-menu-toggle-btn {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  color: #0f172a !important;
+}
+
+/* Light mode Hero adjustments */
+html.light #hero {
+  background-color: #f1f5f9 !important;
+}
+
+html.light #hero-lighting-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(248, 250, 252, 0.95) 0%,
+    rgba(248, 250, 252, 0.3) 50%,
+    rgba(248, 250, 252, 0.1) 100%
+  ) !important;
+}
+
+html.light #hero-content h1,
+html.light #hero-heading {
+  color: #0f172a !important;
+  text-shadow: none !important;
+}
+
+html.light #hero-description {
+  color: #334155 !important;
+}
+
+html.light #hero-eyebrow {
+  color: #475569 !important;
+}
+
+html.light #hero-cta-btn {
+  background-color: #0f172a !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2) !important;
+}
+
+html.light #hero-social-btn {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+  color: #0f172a !important;
+}
+
+html.light #hero-social-btn:hover {
+  background-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* General containers, cards & borders */
+html.light section {
+  border-color: rgba(226, 232, 240, 0.9) !important;
+}
+
+html.light .bg-zinc-950,
+html.light .bg-zinc-950\/80,
+html.light .bg-zinc-950\/85,
+html.light .bg-zinc-950\/90,
+html.light .bg-zinc-950\/95,
+html.light .bg-zinc-900,
+html.light .bg-zinc-900\/90,
+html.light .bg-zinc-900\/80,
+html.light .bg-zinc-900\/70,
+html.light .bg-zinc-900\/60,
+html.light .bg-zinc-900\/50,
+html.light .bg-zinc-900\/40,
+html.light .bg-zinc-900\/30,
+html.light .bg-black\/50,
+html.light .bg-black\/60,
+html.light .bg-black\/70,
+html.light .bg-black\/80,
+html.light .bg-black\/90 {
+  background-color: #ffffff !important;
+}
+
+html.light .border-white\/10,
+html.light .border-white\/15,
+html.light .border-white\/20,
+html.light .border-white\/5,
+html.light .border-white\/25 {
+  border-color: #e2e8f0 !important;
+}
+
+html.light .text-white {
+  color: #0f172a !important;
+}
+
+html.light .text-zinc-100,
+html.light .text-zinc-200,
+html.light .text-zinc-300 {
+  color: #334155 !important;
+}
+
+html.light .text-zinc-400 {
+  color: #64748b !important;
+}
+
+html.light .text-zinc-500 {
+  color: #94a3b8 !important;
+}
+
+html.light .bg-white\/5,
+html.light .bg-white\/10,
+html.light .bg-white\/\[0\.03\],
+html.light .bg-white\/\[0\.04\] {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+html.light .hover\:bg-white\/10:hover,
+html.light .hover\:bg-white\/15:hover,
+html.light .hover\:bg-white\/20:hover {
+  background-color: rgba(0, 0, 0, 0.07) !important;
+}
+
+/* Modals and footer */
+html.light footer {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+html.light .shadow-2xl,
+html.light .shadow-xl,
+html.light .shadow-lg {
+  box-shadow:
+    0 10px 25px -5px rgba(0, 0, 0, 0.06),
+    0 8px 10px -6px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Form inputs in light mode */
+html.light input,
+html.light textarea,
+html.light select {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Modal overlays and dialog containers */
+html.light #hire-me-modal-backdrop {
+  background-color: rgba(15, 23, 42, 0.6) !important;
+}
+
+html.light #hire-me-modal-content {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25) !important;
+}
+
+html.light #hire-me-modal-content label {
+  color: #334155 !important;
+}
+
+html.light #hire-me-modal-content input,
+html.light #hire-me-modal-content textarea,
+html.light #hire-me-modal-content select {
+  background-color: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+html.light #hire-me-modal-content input:focus,
+html.light #hire-me-modal-content textarea:focus,
+html.light #hire-me-modal-content select:focus {
+  background-color: #ffffff !important;
+  border-color: #ef4444 !important;
+}
+
+html.light #modal-email-submit-btn {
+  background-color: #0f172a !important;
+  color: #ffffff !important;
+}
+
+html.light #modal-email-submit-btn:hover {
+  background-color: #1e293b !important;
+}
+
+/* Cyberpunk Social Links in Light Mode */
+html.light #cyberpunk-link-github {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 10px 30px -5px rgba(239, 68, 68, 0.08) !important;
+}
+
+html.light #cyberpunk-link-github:hover {
+  border-color: #ef4444 !important;
+  box-shadow: 0 15px 35px -5px rgba(239, 68, 68, 0.18) !important;
+}
+
+html.light #cyberpunk-link-linkedin {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 10px 30px -5px rgba(6, 182, 212, 0.08) !important;
+}
+
+html.light #cyberpunk-link-linkedin:hover {
+  border-color: #06b6d4 !important;
+  box-shadow: 0 15px 35px -5px rgba(6, 182, 212, 0.18) !important;
+}
+
+html.light .cyber-scanlines {
+  opacity: 0.1 !important;
+}
+
+/* Hanging ID Card Lanyard */
+html.light #hanging-lanyard-section article {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow:
+    0 20px 40px -10px rgba(0, 0, 0, 0.12),
+    0 0 0 1px rgba(0, 0, 0, 0.04) !important;
+}
+
+html.light #hanging-lanyard-section article h3 {
+  color: #0f172a !important;
+}
+
+html.light #hanging-lanyard-section article p {
+  color: #475569 !important;
+}
+
+/* Contact Cards in Light Mode */
+html.light #contact-card-instagram {
+  background-color: #ffffff !important;
+  border-color: #fbcfe8 !important;
+}
+
+html.light #contact-open-project-form-btn {
+  background-color: #0f172a !important;
+  color: #ffffff !important;
+}
+
+html.light #contact-open-project-form-btn:hover {
+  background-color: #1e293b !important;
+}
+
+/* Filter pills and badges */
+html.light .bg-zinc-800,
+html.light .bg-zinc-800\/60,
+html.light .bg-zinc-800\/80 {
+  background-color: #f1f5f9 !important;
+  color: #1e293b !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Career Timeline active line & track */
+html.light #career .bg-white\/10 {
+  background-color: #cbd5e1 !important;
+}
+
+/* Karya Section & Project Cards */
+html.light #karya article,
+html.light #karya .group {
+  background-color: #ffffff;
+}
+
+/* Services and Pricing */
+html.light #services-pricing-container .bg-zinc-950,
+html.light #services-pricing-container .bg-zinc-900 {
+  background-color: #ffffff !important;
+}
+
+/* Workflow Step Cards */
+html.light [id^="workflow-step-"] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+html.light [id^="workflow-step-"]:hover {
+  background-color: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+}
+
+/* Code Snippet and Terminal Previews in Light Mode */
+html.light pre,
+html.light code {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+/* Document scrolling remains on the root; no nested page scroller. */
+html,
+body,
+#root {
+  min-width: 320px;
+}
+body {
+  margin: 0;
+}
+html {
+  overflow-x: clip;
+}
+/* Offsets are handled once in usePageScroll; Lenis also reads CSS scroll margins. */
+section[id] {
+  scroll-margin-top: 0;
+}
+:focus-visible {
+  outline: 2px solid #ef4444;
+  outline-offset: 4px;
+}
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: -5rem;
+  z-index: 150;
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  background: #fafafa;
+  color: #09090b;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+@media (hover: none), (pointer: coarse), (max-width: 767px) {
+  .hero-reveal-mask {
+    display: none;
+  }
+  .ken-burns-intro {
+    animation: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-rise,
+  .arc-dot,
+  .arc-text {
+    opacity: 1;
+  }
+  .arc-line {
+    stroke-dashoffset: 0;
+  }
+  .animate-pulse,
+  .animate-ping,
+  .animate-bounce {
+    animation: none !important;
+  }
+  .hero-reveal-mask {
+    display: none;
+  }
+}
+/* Clip swinging and ambient decorations without creating a scroll container. */
+#app-root {
+  overflow-x: clip;
+}
+
+.gallery-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1rem;
+  border: 1px solid rgb(255 255 255 / 0.15);
+  border-radius: 999px;
+  background: #18181b;
+  color: white;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+.gallery-control:hover {
+  border-color: #f87171;
+}
+.gallery-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  min-height: 250px;
+  padding: 2rem;
+  text-align: center;
+  border: 1px dashed rgb(255 255 255 / 0.15);
+  border-radius: 1rem;
+  background: radial-gradient(
+    ellipse at top,
+    rgb(127 29 29 / 0.16),
+    transparent 70%
+  );
+  color: #a1a1aa;
+}
+
+/* Two equal groups give a seamless loop; duplicate logos stay out of keyboard navigation. */
+.brand-marquee {
+  overflow: hidden;
+}
+.brand-marquee-window {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.brand-marquee-track {
+  display: flex;
+  height: 100%;
+  width: max-content;
+  animation: brand-drift-x var(--brand-duration) linear infinite;
+  animation-play-state: paused;
+}
+.brand-marquee[data-play-state="running"] .brand-marquee-track {
+  animation-play-state: running;
+}
+.brand-marquee-group {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--brand-gap);
+  padding: 0 var(--brand-gap) 0 0;
+  margin: 0;
+  list-style: none;
+  height: 100%;
+}
+.brand-marquee-item {
+  width: 160px;
+  height: 90px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+}
+.brand-marquee-content {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  transform: scale(var(--brand-scale));
+  border-radius: 0.75rem;
+  color: white;
+}
+.brand-marquee-content:is(a, button):hover {
+  background: rgb(255 255 255 / 0.04);
+}
+.brand-marquee-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.12;
+  background-image: radial-gradient(#71717a 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+.brand-marquee-blur {
+  position: absolute;
+  inset-block: 0;
+  width: 10%;
+  pointer-events: none;
+  z-index: 2;
+  backdrop-filter: blur(var(--brand-blur));
+}
+.brand-marquee-blur-left {
+  left: 0;
+  mask-image: linear-gradient(to right, black, transparent);
+}
+.brand-marquee-blur-right {
+  right: 0;
+  mask-image: linear-gradient(to left, black, transparent);
+}
+.brand-marquee[data-direction="vertical"] .brand-marquee-track {
+  flex-direction: column;
+  width: 100%;
+  height: max-content;
+  animation-name: brand-drift-y;
+}
+.brand-marquee[data-direction="vertical"] .brand-marquee-group {
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  padding: 0 0 var(--brand-gap);
+}
+.brand-marquee[data-static="true"] .brand-marquee-track {
+  animation: none;
+  width: 100%;
+}
+.brand-marquee[data-static="true"] .brand-marquee-group {
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem;
+}
+@keyframes brand-drift-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-1 * var(--brand-distance)));
+  }
+}
+@keyframes brand-drift-y {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-1 * var(--brand-distance)));
+  }
+}

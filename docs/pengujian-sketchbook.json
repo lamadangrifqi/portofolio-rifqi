@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Skip link focus and navigation",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Sketchbook on demand",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Sketchbook local assets",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Sketchbook closes",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Supplementary runtime errors",
+    "pass": true,
+    "details": {
+      "errors": []
+    }
+  }
+]

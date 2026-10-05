@@ -1,0 +1,229 @@
+[
+  {
+    "name": "Desktop width",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Document root flow",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "CSS spotlight",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Mouse wheel gradual movement",
+    "pass": true,
+    "details": {
+      "distinct": 3,
+      "end": 350
+    }
+  },
+  {
+    "name": "Small wheel precision",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Fast wheel remains scrollable",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Navbar hero",
+    "pass": true,
+    "details": {
+      "top": 0,
+      "active": "location"
+    }
+  },
+  {
+    "name": "Active menu hero",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Navbar about",
+    "pass": true,
+    "details": {
+      "top": 93,
+      "active": "location"
+    }
+  },
+  {
+    "name": "Active menu about",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Navbar karya",
+    "pass": true,
+    "details": {
+      "top": 93,
+      "active": "location"
+    }
+  },
+  {
+    "name": "Active menu karya",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Navbar stack",
+    "pass": true,
+    "details": {
+      "top": 93,
+      "active": "location"
+    }
+  },
+  {
+    "name": "Active menu stack",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Navbar layanan",
+    "pass": true,
+    "details": {
+      "top": 87,
+      "active": "location"
+    }
+  },
+  {
+    "name": "Active menu layanan",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Navbar kontak",
+    "pass": true,
+    "details": {
+      "top": 94,
+      "active": "location"
+    }
+  },
+  {
+    "name": "Active menu kontak",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Footer scroll to top",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Hero contact link",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Keyboard project dialog",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Dialog background inert",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Project focus trap",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Project Escape and focus return",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Project to service mapping",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Hire dialog active",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Correct encoded email brief",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Scroll unlocked after dialog",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Lanyard drag rotation",
+    "pass": true,
+    "details": {
+      "transform": "matrix(0.970536, -0.240957, 0.240957, 0.970536, 0, 0)"
+    }
+  },
+  {
+    "name": "No page movement during drag",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Career scroll progress",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Mobile width",
+    "pass": true,
+    "details": {
+      "width": 390
+    }
+  },
+  {
+    "name": "Mobile adaptive effects",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Mobile navbar and close",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Mobile native touch swipe",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Mobile modal fits viewport",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Reduced motion readable hero",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Reduced motion decorative effects off",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "Reduced motion immediate navigation",
+    "pass": true,
+    "details": {}
+  },
+  {
+    "name": "No runtime or missing asset errors",
+    "pass": true,
+    "details": {
+      "errors": []
+    }
+  }
+]
